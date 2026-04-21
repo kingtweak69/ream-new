@@ -100,6 +100,13 @@ if __name__ == '__main__':
         default=None,
         type=str,
         help='path to the safe tensors file where MTP weights are stored')
+    )
+    parser.add_argument(
+    '--checkpoint_dir',
+        default=None,
+        type=str,
+        help='directory to save/load checkpoints for resuming interrupted runs'
+    )
 
     args = init_config(mode='merge', parser=parser, verbose=True)
 
@@ -155,6 +162,7 @@ if __name__ == '__main__':
                     sequential=not args.no_sequential,
                     use_gate_output=not args.no_gate_output,
                     gated_sim=not args.no_gated_sim)
+                     checkpoint_dir=args.checkpoint_dir)
     model = merger.fit()
     print(f'Number of parameters after merging: {model.num_parameters()}')
 
