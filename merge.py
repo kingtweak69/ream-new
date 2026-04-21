@@ -162,7 +162,7 @@ if __name__ == '__main__':
                     sequential=not args.no_sequential,
                     use_gate_output=not args.no_gate_output,
                     gated_sim=not args.no_gated_sim)
-                     checkpoint_dir=args.checkpoint_dir)
+                    checkpoint_dir=args.checkpoint_dir)
     model = merger.fit()
     print(f'Number of parameters after merging: {model.num_parameters()}')
 
