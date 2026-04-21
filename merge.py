@@ -99,7 +99,7 @@ if __name__ == '__main__':
         '--mtp_safe_tensors',
         default=None,
         type=str,
-        help='path to the safe tensors file where MTP weights are stored')
+        help='path to the safe tensors file where MTP weights are stored'
     )
     parser.add_argument(
     '--checkpoint_dir',
